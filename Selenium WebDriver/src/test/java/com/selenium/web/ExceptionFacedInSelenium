@@ -1,0 +1,7 @@
+1. SessionNotCreatedException - When browser failed to start
+2. InvalidArgumentException - When no HTTP or HTTPS is provided
+3. IllegalArgumentException - Keys to send should be not null CharSequence
+        e.g., driver.findElement(By.id("email1")).sendKeys(null)
+4. NoSuchElementException - If element not found
+5. ElementNotInteractableException - element not interactable ( disable )
+6. InvalidSelectorException -   invalid selector

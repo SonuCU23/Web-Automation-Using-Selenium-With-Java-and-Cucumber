@@ -1,0 +1,62 @@
+<=====================================================> XPATH <========================================================>
+
+XPATH
+    -> Absolute
+    -> Relative
+    -> Relative + Absolute
+
+Relative :
+========
+
+    1. Finding Elements with tagName : Syntax -> //tagName
+        (a). //a
+        (b). //img
+        (c). //input
+        (d). //select
+        (e). //span
+
+    2. Finding Element with attribute and value : Syntax -> //tagName[@attribute = 'value'] { Case Sensitive }
+        (a). //input[@id = 'email1']
+        (b). //input[@placeholder = 'Email']
+        (c). //input[@type = "email"]
+        (d). //button[@class = 'submit-btn']
+
+
+    3. Finding Element with multiple attribute and value
+        (a). AND : Syntax -> //tagName[@attribute1 = 'value1' and @attribute2 = 'value2']
+                e.g., //input[@id = 'email1' and @placeholder = 'Email'] ( both of two should be matched )
+
+        (b). OR : Syntax -> //tagName[@attribute1 = 'value1' or @attribute2 = 'value2']
+                e.g., //input[@id = 'email1' or @placeholder = 'Email']   ( any of two should be matched)
+
+
+    4. Index Based XPATH : Syntax -> (XPATH)(Index)
+        (a). (//a)(0)
+
+    5. contains function : Syntax -> //@tagName[contains(@attribute, 'value)]
+        e.g., //input[contains(@id, 'email']
+              //input[contains(@name, 'pass')]
+              //a[contains(@href, 'signup')]
+
+
+    # Capturing PopUp Messages e.g., On deleting record we get -> "Successfully Deleted" message appears on the screen we want to capture it
+      But it fades away after few seconds. How can we capture it?
+
+        -> Use debugger either from selectorHub or From chrome dev tools -> source -> debugger
+        -> Application will stopped in debugger mode and we can easily inspect popup or toast which is coming for few seconds
+
+    6. text() function : Syntax -> //tagName[text()='text to find']
+        e.g., //a[text()='Practise']
+              //a[text()='New user? Signup']
+              //h2 [text()='Connect with us']
+              //*[text()='Connect with us'] { consider all the tags available e.g.g. tag can be anything but condition should match }
+              //* - find everything available on the page
+
+    7.  text() function with contains : Syntax -> //tagName[contains(text(), 'text to find')]
+        e.g. //a[contains(text(),'New user)]
+
+
+    What is the difference between
+            //a[text()='Practise']   VS   //a[normalize-space()='Practise']
+
+      
